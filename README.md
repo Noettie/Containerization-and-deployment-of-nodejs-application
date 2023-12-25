@@ -88,8 +88,9 @@ $ kubectl get pods
 
 Terminal commands:
 
-![load-balancer-app](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/8d90ef24-c140-443d-af4b-eaf96db5accb)
+![loadbalancer_ip](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/d2aa71ea-219b-426b-bbb7-3beaa83ee988)
 
+Application Live!
 
 ![load-balancer-app](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/683d0bf7-0d2b-4e23-8b36-e61e4ee94dee)
 
