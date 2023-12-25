@@ -1,13 +1,13 @@
 {
   "name": "nodejs-webapp",
   "version": "1.0.0",
-  "description": "This is my simple nodejs Application",
+  "description": "This is my simple Node.js application",
   "main": "server.js",
   "scripts": {
     "test": "mocha --recursive --timeout 60000 --exit",
-    "start": "start": "node_modules/nodescripts/bin/nodescripts.js start"
+    "start": "node_modules/nodescripts/bin/nodescripts.js start"
   },
-  "author": "Nothando Ndlovu thandonoe.ndlovu@gmail.com",
+  "author": "Nothando Ndlovu <thandonoe.ndlovu@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
@@ -17,3 +17,4 @@
     "react-scripts": "^3.0.1"
   }
 }
+
