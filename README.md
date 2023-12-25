@@ -10,10 +10,8 @@ To containerize a nodejs application and deploy it onto an Azure Kubernetes Clus
 
 ## Tools:
 
-<div>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg"/>
-</div>
 
+  <img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original-wordmark.svg"/>
 
 ## Objective 1 Steps:
 
