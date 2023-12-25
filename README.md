@@ -23,6 +23,8 @@ $ docker run -p 3000:3000 <image_name:tag>
 6. Access the container using localhost:port_number 
 
 The application should look like this :
+![application_live](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/3166d2d5-db12-4105-9c7d-717cd253f0e6)
+
 
 
 
