@@ -42,16 +42,16 @@ The application should look like this :
 
 ## Objective 2 Steps:
 
-1. Login to azure
+1. Login to azure on your terminal.
 $ az login
-2. Create a resource group
+2. Create a resource group.
 $ az group create --name <resourceGroup_name> --location <region>
-3. Create registry inside the resource group
+3. Create registry inside the resource group.
 $ az acr create --resource-group <nottie-myResourceGroup> --name <nottieacr> --sku Standard --location <eastus>
-4. Login to Azure Container registery (acr)
+4. Login to Azure Container registery (acr).
 $ az acr login --name <nottieacr>
-5. Tag the image using the access keys of the registry i.e name of registry and login server 
-You have to tag the image first before pushing with the specific azure registry name otherwise will be denied access
+5. Tag the image using the access keys of the registry i.e name of registry and login server. 
+You have to tag the image first before pushing with the specific azure registry name otherwise will be denied access.
 $ docker tag nottie/nodejswebapp:latest nottieacr.azurecr.io/nodejswebapp:v1
 $ docker push nottieacr.azurecr.io/nodejswebapp:v1
 $  az acr repository list --name notieacr --output table
@@ -79,7 +79,7 @@ Container registry with image:
 
 1. Create the aks cluster in your region.
 $ az aks create --resource-group nottie-myResourceGroup --name nottieCluster --node-count 2 --generate-ssh-keys --enable-addons monitoring
-If this is your first cluster creation on aks it may be necessary register microsft.insights and microsft.network
+If this is your first cluster creation on aks it may be necessary register microsft.insights and microsft.network.
 $ az provider register --namespace microsoft.insights
 
 ![registering-msinsights](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/1f52d1d8-4566-4e05-8988-8771ac56ec71)
@@ -91,7 +91,7 @@ $ az aks show --name <noenoe-cluster> --resource-group <nottie-myResourceGroup>
 3. Connect to the cluster.
 $ az aks get-credentials --resource-group <nottie-myResourceGroup> --name <noenoe-cluster> --overwrite-existing
 $ az aks update -n noenoe-Cluster -g nottie-myResourceGroup --attach-acr nottieacr
-4. Apply the deployment Confirm that pods have been created
+4. Apply the deployment Confirm that pods have been created.
 $ kubectl apply -f deployment.yml
 $ kubectl get pods
 5. Check the load balancer ip and access the application.
