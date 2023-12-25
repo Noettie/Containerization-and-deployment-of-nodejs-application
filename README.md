@@ -24,7 +24,8 @@ $ docker run -p 3000:3000 <image_name:tag>
 
 The application should look like this :
 
-![application_live](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/3166d2d5-db12-4105-9c7d-717cd253f0e6
+![localhost-app](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/6c3098b9-53b4-48a6-95f3-c7819de7c127)
+
 
 
 ** Congratulations! You have successfuly containerized a nodejs application** 
@@ -52,12 +53,66 @@ Terminal commands:
 
 The output from the Azure ui will look liks this:
 
+Resource group: 
 ![akscluster](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/8e5063db-858b-4dfd-82e6-1cf6c38395bd)
 
 
+Container registry with image:
+
 ![acr-imagepush](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/326f96dd-5755-4674-85e1-f5dc01af592f)
 
+
+
 ** Congratulations ! You have successfully pushed an image to the Azure container registry** 
+
+## Objective 3 Steps:
+
+1. Create the aks cluster in your region.
+$ az aks create --resource-group nottie-myResourceGroup --name nottieCluster --node-count 2 --generate-ssh-keys --enable-addons monitoring
+If this is your first cluster creation on aks it may be necessary register microsft.insights and microsft.network
+$ az provider register --namespace microsoft.insights
+
+![registering-msinsights](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/1f52d1d8-4566-4e05-8988-8771ac56ec71)
+
+![registrations](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/31eaa190-f4be-4fd7-a078-91b1ecd8e8f7)
+
+2. Confirm cluster was created. 
+$ az aks show --name <noenoe-cluster> --resource-group <nottie-myResourceGroup>
+3. Connect to the cluster.
+$ az aks get-credentials --resource-group <nottie-myResourceGroup> --name <noenoe-cluster> --overwrite-existing
+$ az aks update -n noenoe-Cluster -g nottie-myResourceGroup --attach-acr nottieacr
+4. Apply the deployment Confirm that pods have been created
+$ kubectl apply -f deployment.yml
+$ kubectl get pods
+5. Check the load balancer ip and access the application.
+
+Terminal commands:
+
+![load-balancer-app](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/8d90ef24-c140-443d-af4b-eaf96db5accb)
+
+
+![load-balancer-app](https://github.com/Noettie/Containerization-and-deployment-of-nodejs-application/assets/108426517/683d0bf7-0d2b-4e23-8b36-e61e4ee94dee)
+
+** Congratulations! You have successfully deployed a nodejs application onto an azure kubernetes cluster.**
+
+## Summary 
+- Dockerized an application.
+- Tested it locally.
+- Pushed image to ACR to store image.
+- Created AKS cluster.
+- Deployed application onto cluster. 
+- Accessed the application via the web.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
