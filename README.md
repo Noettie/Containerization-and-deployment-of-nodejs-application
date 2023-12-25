@@ -21,7 +21,7 @@ To containerize a nodejs application and deploy it onto an Azure Kubernetes Clus
 ## Objective 1 Steps:
 
 1. Install docker onto your machine and start the docker engine.
-$ sudo service docker start.
+$$ sudo service docker start.
 2. Clone the application onto your local machine.
 $ git clone <url>
 3. Build the application image using the Dockerfile.
